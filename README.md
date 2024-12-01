@@ -22,3 +22,5 @@ Good luck and have fun!
 
 **link to Spots**
 https://clarckn.github.io/se_project_spots/
+**links to video description**
+https://www.loom.com/share/a4f90d0a14b84c6fab8c023f7a8f5707?sid=d23fd629-84ec-42e3-a73d-06c7bc566772
