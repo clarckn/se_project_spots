@@ -1,5 +1,9 @@
 # Project 3: Spots
 
+It's a webpage of a profile page that allows user to have profile picture and a description about user or that describe user's profile page. User can post pictures and other users get to interact by cliking like button to like post.
+
+To make that webpage, I apply flex and grid container, margins and padding to adjust elements on webpage; and @media screen for diferent viewport size. Transitions were aplly to buttons.
+
 ### Overview
 
 - Intro

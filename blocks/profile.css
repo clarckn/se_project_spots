@@ -1,7 +1,8 @@
 .profile {
   display: flex;
   padding-bottom: 20px;
-  margin: 34px 0 0;
+  padding-top: 34px;
+  margin: 0;
   border-bottom: 1px solid rgba(33, 33, 33, 0.4);
 }
 
@@ -16,7 +17,6 @@
   display: flex;
   flex-direction: column;
   width: 420px;
-  height: 190px;
 }
 
 .profile__title {
@@ -27,41 +27,47 @@
   text-overflow: ellipsis;
   overflow: hidden;
   display: -webkit-box;
-  line-clamp: 3;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  color: rgb(33, 33, 33, 1);
 }
 
 .profile__text {
-  margin: 12px 0 0;
+  margin: 0;
   font-weight: 500;
   font-size: 16px;
   line-height: 1;
   text-overflow: ellipsis;
   overflow: hidden;
   display: -webkit-box;
-  line-clamp: 3;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  color: rgb(33, 33, 33, 0.7);
 }
 
 .profile__edit-button {
   display: flex;
   gap: 8px;
   padding: 0;
-  margin: 114px 0 0;
-  width: 107.34px;
-  height: 16px;
-  border-radius: 90px;
   border-style: none;
-  opacity: 0.7;
+  background-color: transparent;
   font-size: 16px;
   font-weight: 500;
   line-height: 1;
-  color: rgba(33, 33, 33, 1);
+  color: rgb(33, 33, 33, 0.7);
+  margin-top: auto;
+}
+
+.profile__edit-button:hover {
+  cursor: pointer;
+  color: rgb(33, 33, 33, 1);
+  transition: color 0.5s ease-in;
 }
 
 .profile__button-post {
   align-items: center;
-  margin: 138px 0 0 auto;
+  margin-top: auto;
+  margin-left: auto;
   width: 149px;
   height: 52px;
   border-radius: 8px;
@@ -75,6 +81,13 @@
   gap: 8px;
   color: rgb(252, 245, 229, 1);
 }
+
+.profile__button-post:hover {
+  cursor: pointer;
+  opacity: 80%;
+  transition: opacity 0.5s ease-in;
+}
+
 @media screen and (max-width: 627px) {
   .profile {
     flex-direction: column;
@@ -83,6 +96,7 @@
     text-align: center;
     justify-content: center;
     margin: 0 auto;
+    padding-top: 20px;
   }
   .profile__image {
     margin-right: 0;
@@ -92,7 +106,6 @@
   .profile__title {
     margin: 12px 0 0;
     font-size: 20px;
-    line-height: 1;
   }
   .profile__edit-button {
     margin: 32px auto 0;
