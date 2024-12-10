@@ -1,10 +1,6 @@
-.card {
-  max-width: 413px;
-}
-
 .card__image {
   height: 413px;
-  width: 413px;
+  width: 100%;
   object-fit: cover;
   display: block;
   border-radius: 8px;
@@ -46,7 +42,7 @@
   transition: opacity 0.5s ease-in;
 }
 
-@media screen and (max-width: 627px) {
+@media screen and (max-width: 630px) {
   .card__title {
     font-size: 16px;
     line-height: 1;
@@ -54,10 +50,6 @@
   }
   .card__image {
     height: 288px;
-    width: 288px;
-  }
-
-  .card__content {
     width: 288px;
   }
 }
