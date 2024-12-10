@@ -18,6 +18,7 @@
 .profile__column {
   display: flex;
   flex-direction: column;
+  max-width: 420px;
 }
 
 .profile__title {
@@ -104,8 +105,13 @@
     height: 80px;
     width: 80px;
   }
+
+  .profile__column {
+    max-width: 288px;
+  }
+
   .profile__title {
-    margin: 12px 0 0;
+    margin: 12px 0 6px;
     font-size: 20px;
   }
   .profile__edit-button {
