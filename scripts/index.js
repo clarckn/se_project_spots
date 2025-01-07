@@ -24,15 +24,39 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
   },
 ];
-console.log(initialCards);
 
 const profileEditButton = document.querySelector(".profile__edit-button");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileClsdButton = editProfileModal.querySelector(
   ".modal__closed-button"
 );
+const profileName = document.querySelector(".profile__title");
+const profileDescription = document.querySelector(".profile__text");
+const editModalInputName = editProfileModal.querySelector(
+  "#profile-name-input"
+);
+const editModalInputDescription = editProfileModal.querySelector(
+  "#profile-description-input"
+);
+const modalFormElement = editProfileModal.querySelector(".modal__form");
+const cardTemplate = document.querySelector("#template-cards");
+const cardsList = document.querySelector(".cards__list");
+
+function getCardElement(data) {
+  const cardElement = cardTemplate.content
+    .querySelector(".card")
+    .cloneNode(true);
+  const cardNameEl = cardElement.querySelector(".card__title");
+  cardNameEl.textContent = data.name;
+  const cardImgEl = cardElement.querySelector(".card__image");
+  cardImgEl.src = data.link;
+  cardImgEl.textContent = data.name;
+  return cardElement;
+}
 
 function openModal() {
+  editModalInputName.value = profileName.textContent;
+  editModalInputDescription.value = profileDescription.textContent;
   editProfileModal.classList.add("modal_opened");
 }
 
@@ -40,10 +64,20 @@ function closedModal() {
   editProfileModal.classList.remove("modal_opened");
 }
 
-profileEditButton.addEventListener("click", function () {
-  openModal();
-});
-
-editProfileClsdButton.addEventListener("click", function () {
+function handleProfileFormSubmit(evt) {
+  evt.preventDefault();
+  profileName.textContent = editModalInputName.value;
+  profileDescription.textContent = editModalInputDescription.value;
   closedModal();
-});
+}
+
+profileEditButton.addEventListener("click", openModal);
+
+editProfileClsdButton.addEventListener("click", closedModal);
+
+modalFormElement.addEventListener("submit", handleProfileFormSubmit);
+
+for (let i = 0; i < initialCards.length; i++) {
+  const cardElement = getCardElement(initialCards[i]);
+  cardsList.prepend(cardElement);
+}
