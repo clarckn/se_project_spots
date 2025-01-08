@@ -43,6 +43,12 @@
   opacity: 40%;
 }
 
+.modal__closed-button:hover {
+  cursor: pointer;
+  opacity: 100%;
+  transition: opacity 0.5s ease-in;
+}
+
 .modal__label {
   display: flex;
   flex-direction: column;
@@ -61,6 +67,13 @@
   font-size: 20px;
   line-height: 1;
 }
+
+.modal__input:hover {
+  cursor: pointer;
+  border: 1px solid rgba(33, 33, 33, 1);
+  transition: border 0.5s ease-in;
+}
+
 .modal__save-button {
   width: 156px;
   padding: 18px 0;
